@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Interactive Pricing</title>
+	<style type="text/css">
+		body {
+			font-family: Arial;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 20px;
+			background-color: #fff;
+		}
+		.container {
+			width: 90%;
+			max-width: 400px;
+			background: #fff;
+			padding: 20px;
+			border-radius: 10px;
+		}
+		.title{
+			text-align: center;
+			font-weight: bold;
+			color: #f08080;
+			margin-bottom: 20px;
+		}
+		.box {
+			border: 2px solid #f08080;
+			padding: 15px;
+			margin-bottom: 15px;
+			border-radius: 10px;
+			position: relative;
+			cursor: pointer;
+		}
+		.box label{
+			font-weight: bold;
+		}
+		.box input[type="radio"] {
+			margin-right: 10px;
+		}
+		.discount {
+			display: inline-block;
+			background: #f08080;
+			color: white;
+			padding: 3px 8px;
+			border-radius: 5px;
+			font-size: 12px;
+			margin-left: 5px;
+		}
+		.most-popular {
+			position: absolute;
+			top: -10px;
+			right: 10px;
+			background: #f08080;
+			color: white;
+			padding: 3px 8px;
+			border-radius: 5px;
+			font-size: 12px;
+		}
+		.content {
+			display: none;
+			margin-top: 10px;
+		}
+		.options label{
+			display: block;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		.options select {
+			padding: 5px;
+			margin: 5px 0;
+			width: 100%;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		.add-to-cart {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			background: #f08080;
+			color:white;
+			text-align: center;
+			font-weight: bold;
+			border-radius: 10px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="title">YAY! It's BOGO</div>
+
+		<div class="box" onclick="toggleBox('box1')">
+			<input type="radio" name="unit" value="1"> 1 Unit <span class="discount">10% off</span> <strong>$10.00 USD</strong>
+			<div id="box1" class="content">
+			<div class="options">
+			<label>#1</label>
+			<select><option>S</option><option>M</option><option>L</option></select>	
+			<select><option>Black</option><option>Blue</option><option>Red</option></select>
+			</div>
+		</div>		
+	</div>
+
+	<div class="box" onclick="toggleBox('box2')">
+		<input type="radio" name="unit" value="2"> 2 Unit <span class="discount">20% off</span> <strong>$18.00 USD</strong>
+		    <span class="Most-popular">MOST POPULAR</span> 
+			<div id="box2" class="content">
+			<div class="options">
+			<label>#1</label>
+			<select><option>S</option><option>M</option><option>L</option></select>	
+			<select><option>Yellow</option><option>Black</option><option>Green</option></select>
+			</div>
+			<div class="options">
+			<label>#2</label>
+			<select><option>S</option><option>M</option><option>L</option></select>	
+			<select><option>White</option><option>Grey</option><option>Pink</option></select>
+			</div>
+		</div>		
+	</div>
+
+	<div class="box" onclick="toggleBox('box3')">
+			<input type="radio" name="unit" value="3"> 3 Unit <span class="discount">30% off</span> <strong>$24.00 USD</strong>
+			<div id="box3" class="content">
+			<div class="options">
+			<label>#1</label>
+			<select><option>S</option><option>M</option><option>L</option></select>	
+			<select><option>Purple</option><option>white</option><option>Brown</option></select>
+			</div>
+			<div class="options">
+			<label>#2</label>
+			<select><option>S</option><option>M</option><option>L</option></select>	
+			<select><option>Red</option><option>Green</option><option>Purplek</option></select>
+			</div>
+			<div class="options">
+			<label>#3</label>
+			<select><option>S</option><option>M</option><option>L</option></select>	
+			<select><option>Black</option><option>Pink</option><option>Blue</option></select>
+			</div>
+		</div>		
+	</div>
+
+	<div class="add-to-cart">+ Add to Cart</div>
+</div>
+
+<script type="text/javascript">
+	function toggleBox(id) {
+		var content = document.getElementById(id);
+		content.style.display = content.style.display === 'block' ? 'none' : 'block';
+			}
+</script>
+
+</body>
+</html>
